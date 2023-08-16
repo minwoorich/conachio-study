@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class 외판원순회_10971 {
+public class 외판원순회2_10971 {
     static int N;
     static boolean[] visited;
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
