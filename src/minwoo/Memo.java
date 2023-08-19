@@ -8,13 +8,26 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Memo {
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static int N;
-    static int M;
-    static List<Integer> result;
+    public static void main(String[] args) {
+        int n = 4; // Number of rows
 
-    public static void main(String[] args) throws IOException {
-        String test = br.readLine();
-        System.out.println(test);
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i; j++) {
+                list.add(-1); // Add placeholders for empty spaces
+            }
+            for (int j = i; j < n; j++) {
+                int value = i * n + j;
+                list.add(value);
+            }
+        }
+
+        // Remove placeholders (-1) from the list
+        list.removeIf(value -> value == -1);
+
+        // Print the list
+        for (int value : list) {
+            System.out.print(value + " ");
+        }
     }
 }
