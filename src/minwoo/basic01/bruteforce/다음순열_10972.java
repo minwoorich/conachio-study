@@ -18,9 +18,6 @@ public class 다음순열_10972 {
         for (int i = 0; i < N; i++) {
             array[i] = Integer.parseInt(temp[i]);
         }
-
-
-
         nextPermutation();
     }
 
