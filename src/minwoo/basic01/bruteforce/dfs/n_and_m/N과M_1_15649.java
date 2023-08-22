@@ -1,4 +1,4 @@
-package minwoo.basic01.bruteforce.n_and_m;
+package minwoo.basic01.bruteforce.dfs.n_and_m;
 
 import java.io.BufferedReader;
 import java.io.IOException;

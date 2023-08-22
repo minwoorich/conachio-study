@@ -1,11 +1,11 @@
-package minwoo.basic01.bruteforce.n_and_m;
+package minwoo.basic01.bruteforce.dfs.n_and_m;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class N과M_9_15663 {
+public class N과M_8_15657 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int N,M;
     static int[] nArr;
@@ -17,7 +17,7 @@ public class N과M_9_15663 {
         N = Integer.parseInt(input[0]);
         M = Integer.parseInt(input[1]);
         nArr = new int[N];
-        visit = new boolean[N];
+        visit = new boolean[10001];
         result = new int[M];
         output = new StringBuilder();
 
@@ -27,11 +27,11 @@ public class N과M_9_15663 {
         }
         Arrays.sort(nArr);
 
-        dfs(0);
+        dfs(0, nArr[0]);
         System.out.println(output);
     }
 
-    public static void dfs(int depth) {
+    public static void dfs(int depth, int last) {
         if (depth == M) {
             for (int num : result) {
                 output.append(num + " ");
@@ -39,15 +39,11 @@ public class N과M_9_15663 {
             output.append("\n");
             return;
         }
-        int remember = 0;
-        for (int i = 0; i < N; i++) {
-            if (!visit[i] && remember != nArr[i]) {
-                remember = nArr[i];
 
-                visit[i] = true;
+        for (int i = 0; i < N; i++) {
+            if (last <= nArr[i]) {
                 result[depth] = nArr[i];
-                dfs(depth + 1);
-                visit[i] = false;
+                dfs(depth + 1, nArr[i]);
             }
         }
     }

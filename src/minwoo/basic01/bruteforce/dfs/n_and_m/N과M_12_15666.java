@@ -1,11 +1,11 @@
-package minwoo.basic01.bruteforce.n_and_m;
+package minwoo.basic01.bruteforce.dfs.n_and_m;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class N과M_10_15664 {
+public class N과M_12_15666 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int N,M;
     static int[] nArr;
@@ -34,20 +34,18 @@ public class N과M_10_15664 {
     public static void dfs(int depth, int last) {
         if (M == depth) {
             for (int num : result) {
-                output.append(num+" ");
+                output.append(num + " ");
             }
             output.append("\n");
             return;
         }
+
         int remember = 0;
         for (int i = 0; i < N; i++) {
-            if (!visit[i] && remember != nArr[i] && last <= nArr[i]) {
+            if (remember != nArr[i] && last <= nArr[i]) {
                 remember = nArr[i];
-
-                visit[i] = true;
                 result[depth] = nArr[i];
                 dfs(depth + 1, nArr[i]);
-                visit[i] = false;
             }
         }
     }

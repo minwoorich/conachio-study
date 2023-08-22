@@ -1,4 +1,4 @@
-package minwoo.basic01.bruteforce;
+package minwoo.basic01.bruteforce.dfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
