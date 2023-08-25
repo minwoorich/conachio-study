@@ -5,29 +5,40 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Memo {
-    public static void main(String[] args) {
-        int n = 4; // Number of rows
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static StringTokenizer st;
+    static ArrayList<Integer>[] graph;
+    static boolean[] visited;
+    static List<Integer> output = new ArrayList<>();
+    static int N,M;
 
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < i; j++) {
-                list.add(-1); // Add placeholders for empty spaces
+    public static void main(String[] args) throws IOException {
+        st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        visited = new boolean[N];
+
+        dfs();
+    }
+    public static void dfs(){
+        if (output.size() == M) {
+            for (int num : output) {
+                System.out.print(num+" ");
             }
-            for (int j = i; j < n; j++) {
-                int value = i * n + j;
-                list.add(value);
-            }
+            System.out.println();
+
+            return;
         }
 
-        // Remove placeholders (-1) from the list
-        list.removeIf(value -> value == -1);
+        for (int i = 0; i < N; i++) {
+            output.add(i);
+            dfs();
+            output.remove(output.size() - 1);
 
-        // Print the list
-        for (int value : list) {
-            System.out.print(value + " ");
         }
     }
 }
