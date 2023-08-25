@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class ABCDE_13023 {
@@ -52,5 +53,7 @@ public class ABCDE_13023 {
                 visited[neighbor] = false;
             }
         }
+
+        Arrays.stream(new int[]{1, 2, 3, 4});
     }
 }
