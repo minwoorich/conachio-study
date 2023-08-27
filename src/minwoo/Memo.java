@@ -11,34 +11,34 @@ import java.util.StringTokenizer;
 public class Memo {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringTokenizer st;
-    static ArrayList<Integer>[] graph;
-    static boolean[] visited;
+    static int[] arr;
     static List<Integer> output = new ArrayList<>();
-    static int N,M;
+    static int N,S;
 
     public static void main(String[] args) throws IOException {
-        st = new StringTokenizer(br.readLine());
+        st = new StringTokenizer(br.readLine(), " ");
         N = Integer.parseInt(st.nextToken());
-        M = Integer.parseInt(st.nextToken());
-        visited = new boolean[N];
+        S = Integer.parseInt(st.nextToken());
+        arr = new int[N];
+        int count = 0;
 
-        dfs();
-    }
-    public static void dfs(){
-        if (output.size() == M) {
-            for (int num : output) {
-                System.out.print(num+" ");
-            }
-            System.out.println();
-
-            return;
-        }
-
+        st = new StringTokenizer(br.readLine(), " ");
         for (int i = 0; i < N; i++) {
-            output.add(i);
-            dfs();
-            output.remove(output.size() - 1);
-
+            arr[i] = Integer.parseInt(st.nextToken());
         }
+
+        for (int i = 1; i < (1 << N); i++) {
+            int sum = 0;
+            for (int k = 0; k < N; k++) {
+                if ((i & (1 << k)) != 0) {
+                    sum += arr[k];
+                }
+            }
+            if (sum == S) {
+                count++;
+            }
+        }
+        System.out.println(count);
+
     }
 }
