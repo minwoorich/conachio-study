@@ -49,7 +49,7 @@ public class BOJ_섬의개수_4963 {
     public static void bfs(int startX, int startY) {
         queue.add(new Point(startX, startY));
         map[startY][startX] = 0; // [startY][startX] 순서 조심해야함.
-                                // 행,열 순서이기 때문에 Y,X 순으로 들어가야함
+                                // (행,열) 순서이기 때문에 Y,X 순으로 들어가야함
 
         while (!queue.isEmpty()) {
             Point currentPoint = queue.remove();
