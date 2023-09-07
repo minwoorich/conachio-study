@@ -1,4 +1,4 @@
-package minwoo.백준문제.dfs;
+package minwoo.백준문제.graph;
 
 import java.io.BufferedReader;
 import java.io.IOException;
