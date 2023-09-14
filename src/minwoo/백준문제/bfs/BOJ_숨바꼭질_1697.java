@@ -18,6 +18,9 @@ public class BOJ_숨바꼭질_1697 {
         K = Integer.parseInt(st.nextToken());
         visited = new int[100001];
         bfs(N);
+        for (int i = 1; i < 20; i++) {
+            System.out.println("("+i+","+visited[i]+")" +" ");
+        }
     }
 
     public static void bfs(int start) {
