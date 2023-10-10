@@ -3,15 +3,14 @@ package minwoo.백준문제.tree;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-class Node{
+class Node {
     char value;
-    Node left;
-    Node right;
+    minwoo.백준문제.tree.Node left;
+    minwoo.백준문제.tree.Node right;
 
-    public Node(char value, Node left, Node right) {
+    public Node(char value, minwoo.백준문제.tree.Node left, minwoo.백준문제.tree.Node right) {
         this.value = value;
         this.left = left;
         this.right = right;
@@ -77,5 +76,6 @@ public class BOJ_트리순회_1991 {
         postOrder(node.right);
         System.out.print(node.value);
     }
+
 
 }
