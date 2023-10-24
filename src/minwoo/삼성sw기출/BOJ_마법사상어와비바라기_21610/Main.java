@@ -1,4 +1,4 @@
-package minwoo.삼성sw기출;
+package minwoo.삼성sw기출.BOJ_마법사상어와비바라기_21610;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,7 +15,7 @@ class Cloud{
     }
 }
 
-public class BOJ_마법사상어와비바라기_21610 {
+public class Main {
     static int N,M;
     static int[][] A;
     static List<Cloud> clouds = new ArrayList<>();

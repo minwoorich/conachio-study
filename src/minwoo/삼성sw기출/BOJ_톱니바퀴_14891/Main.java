@@ -1,4 +1,4 @@
-package minwoo.삼성sw기출;
+package minwoo.삼성sw기출.BOJ_톱니바퀴_14891;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,7 +16,7 @@ class Gear{
 }
 // N = 0, S = 1
 // 시계 = 1, 반시계 = -1
-public class BOJ_톱니바퀴_14891 {
+public class Main {
     static int[] dx = {-1, 1};
     static Queue<Gear> queue = new ArrayDeque<>();
     static boolean[] visited = new boolean[4];

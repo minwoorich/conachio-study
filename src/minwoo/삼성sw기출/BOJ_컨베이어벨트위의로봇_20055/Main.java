@@ -1,10 +1,10 @@
-package minwoo.삼성sw기출;
+package minwoo.삼성sw기출.BOJ_컨베이어벨트위의로봇_20055;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class BOJ_컨베이어벨트위의로봇_20055 {
+public class Main {
     static int N,K, count;
     static int belt[];
     static boolean isOccupied[];

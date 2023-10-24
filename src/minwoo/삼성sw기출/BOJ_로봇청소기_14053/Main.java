@@ -1,11 +1,10 @@
-package minwoo.삼성sw기출;
+package minwoo.삼성sw기출.BOJ_로봇청소기_14053;
 
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class BOJ_로봇청소기_14053 {
+public class Main {
     static int[] dx = {0, 1, 0, -1};
     static int[] dy = {-1, 0, 1, 0};
 

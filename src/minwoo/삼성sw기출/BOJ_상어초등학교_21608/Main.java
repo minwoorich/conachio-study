@@ -1,4 +1,4 @@
-package minwoo.삼성sw기출;
+package minwoo.삼성sw기출.BOJ_상어초등학교_21608;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,7 +35,7 @@ class Seat implements Comparable<Seat> {
     }
 }
 
-public class BOJ_상어초등학교_21608 {
+public class Main {
     static int[] dx = {1, -1, 0, 0};
     static int[] dy = {0, 0, 1, -1};
     static int N;
