@@ -1,4 +1,4 @@
-package minwoo.백준문제.bfs;
+package minwoo.백준문제.bfs.BOJ_숨바꼭질_1697;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ_숨바꼭질_1697 {
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int N,K;
     static int[] visited;

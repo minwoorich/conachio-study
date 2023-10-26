@@ -1,11 +1,11 @@
-package minwoo.백준문제.bfs;
+package minwoo.백준문제.bfs.BOJ_숨바꼭질4_13913;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BOJ_숨바꼭질4_13913 {
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int N,K;
     static Queue<Integer> queue = new ArrayDeque<>();

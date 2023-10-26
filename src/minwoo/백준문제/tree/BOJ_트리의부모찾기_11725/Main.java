@@ -1,11 +1,11 @@
-package minwoo.백준문제.tree;
+package minwoo.백준문제.tree.BOJ_트리의부모찾기_11725;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BOJ_트리의부모찾기_11725 {
+public class Main {
     static Queue<Integer> queue = new ArrayDeque<>();
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int N;

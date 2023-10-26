@@ -1,4 +1,4 @@
-package minwoo.백준문제.bfs;
+package minwoo.백준문제.bfs.BOJ_단지번호붙이기_2667;
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.List;
 
 
-public class BOJ_단지번호붙이기_2667 {
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static Queue<Point> queue = new ArrayDeque<>();
     static int[][] map;

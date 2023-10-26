@@ -1,4 +1,4 @@
-package minwoo.백준문제.bfs;
+package minwoo.백준문제.bfs.BOJ_미로탐색_2178;
 
 import java.io.BufferedReader;
 import java.awt.*;
@@ -8,7 +8,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ_미로탐색_2178 {
+public class Main {
     static Queue<Point> queue = new ArrayDeque<>();
     static int N,M;
     static int[] dx = new int[]{0,0,1,-1};

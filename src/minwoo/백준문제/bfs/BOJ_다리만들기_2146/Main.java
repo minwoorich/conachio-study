@@ -1,4 +1,4 @@
-package minwoo.백준문제.bfs;
+package minwoo.백준문제.bfs.BOJ_다리만들기_2146;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,7 +19,7 @@ class Node{
     }
 }
 
-public class BOJ_다리만들기_2146 {
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int N;
     static int[][] map;

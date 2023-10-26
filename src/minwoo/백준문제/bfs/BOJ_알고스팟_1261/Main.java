@@ -1,4 +1,4 @@
-package minwoo.백준문제.bfs;
+package minwoo.백준문제.bfs.BOJ_알고스팟_1261;
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -8,7 +8,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.StringTokenizer;
 
-public class BOJ_알고스팟_1261 {
+public class Main {
     static Deque<Point> queue = new ArrayDeque<>();
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int[][] map;

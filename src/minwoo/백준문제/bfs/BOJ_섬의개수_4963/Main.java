@@ -1,4 +1,4 @@
-package minwoo.백준문제.bfs;
+package minwoo.백준문제.bfs.BOJ_섬의개수_4963;
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -8,7 +8,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ_섬의개수_4963 {
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int[][] map;
     static int W,H;

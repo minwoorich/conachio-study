@@ -1,4 +1,4 @@
-package minwoo.백준문제.tree;
+package minwoo.백준문제.tree.BOJ_트리순회_1991;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,16 +7,16 @@ import java.util.StringTokenizer;
 
 class Node {
     char value;
-    minwoo.백준문제.tree.Node left;
-    minwoo.백준문제.tree.Node right;
+    Node left;
+    Node right;
 
-    public Node(char value, minwoo.백준문제.tree.Node left, minwoo.백준문제.tree.Node right) {
+    public Node(char value, Node left, Node right) {
         this.value = value;
         this.left = left;
         this.right = right;
     }
 }
-public class BOJ_트리순회_1991 {
+public class Main {
     static int N;
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static StringBuilder output = new StringBuilder();

@@ -1,4 +1,4 @@
-package minwoo.백준문제.bfs;
+package minwoo.백준문제.bfs.BOJ_연결요소의개수_11724;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ_연결요소의개수_11724 {
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static Queue<Integer> queue = new ArrayDeque<>();
     static StringTokenizer st;

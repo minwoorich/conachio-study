@@ -1,4 +1,4 @@
-package minwoo.백준문제.bfs;
+package minwoo.백준문제.bfs.BOJ_나이트의이동_7526;
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -8,7 +8,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ_나이트의이동_7526 {
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static int[] dx = new int[]{1, 1,-1,-1, 2, 2,-2,-2};
     static int[] dy = new int[]{2, -2, 2,-2, 1,-1,1,-1};

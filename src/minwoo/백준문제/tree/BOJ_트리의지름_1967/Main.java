@@ -1,23 +1,23 @@
-package minwoo.백준문제.tree;
+package minwoo.백준문제.tree.BOJ_트리의지름_1967;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-class Node1{
+class Node{
     int neighbor;
     int weight;
 
-    public Node1(int neighbor, int weight) {
+    public Node(int neighbor, int weight) {
         this.neighbor = neighbor;
         this.weight = weight;
     }
 }
 
-public class BOJ_트리의지름_1967 {
+public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static ArrayList<Node1>[] tree;
+    static ArrayList<Node>[] tree;
     static int n;
     static int[] distance;
     static boolean[] visited;
@@ -37,8 +37,8 @@ public class BOJ_트리의지름_1967 {
             int y = Integer.parseInt(input[1]);
             int weight = Integer.parseInt(input[2]);
 
-            tree[x].add(new Node1(y, weight));
-            tree[y].add(new Node1(x, weight));
+            tree[x].add(new Node(y, weight));
+            tree[y].add(new Node(x, weight));
         }
 
         for (int i = 1; i <= n; i++) {
@@ -55,7 +55,7 @@ public class BOJ_트리의지름_1967 {
             max = distance;
         }
 
-        for (Node1 node : tree[current]) {
+        for (Node node : tree[current]) {
             if (!visited[node.neighbor]) {
                 visited[node.neighbor] = true;
                 dfs(node.neighbor, distance + node.weight);
