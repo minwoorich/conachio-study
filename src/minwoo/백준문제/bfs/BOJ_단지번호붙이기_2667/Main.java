@@ -88,5 +88,6 @@ public class Main {
 
         // 단지를 전부 순회했으면 최종 집개수를 반환
         return count;
+
     }
 }
