@@ -100,6 +100,7 @@ public class Main {
                 if (!(nr >= 0 && nc >= 0 && nr < N && nc < M)) {
                     continue;
                 }
+                // 1은 기존에 설치한 벽, 11은 새로 설치된 벽
                 if (map[nr][nc] == 1 || map[nr][nc] == 11) {
                     continue;
                 }
@@ -108,7 +109,7 @@ public class Main {
                 }
                 queue.add(new Point(nr, nc));
                 visited[nr][nc] = true;
-                map[nr][nc] = 22; // 새로 전파된 바이러스는 2가 아닌 22로 표시
+                map[nr][nc] = 22; // 22는 새로 전파된 바이러스
                 // 그래야 이따 reset할때 구분 할 수 있음
             }
         }
@@ -120,7 +121,7 @@ public class Main {
             int r = emptyList.get(num).r;
             int c = emptyList.get(num).c;
 
-            map[r][c] = 11;
+            map[r][c] = 11; // 1은 기존에 설치된 벽, 11은 새로 설치할 벽
         }
     }
 
