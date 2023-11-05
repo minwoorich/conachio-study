@@ -1,25 +1,34 @@
 package minwoo;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 
 public class Memo {
+    static List<Integer> output = new LinkedList<>();
+    static int[] list = {0, 2, 4, 5, 9, 5, 61};
     public static void main(String[] args) throws IOException {
-        List<Integer> list = new LinkedList<>();
-
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        System.out.println(list.size());
-        list.remove(list.size() - 1);
-        System.out.println(list.size());
-        list.add(4);
-        System.out.println(list.size());
+        dfs(0,list[0]);
     }
+
+    public static void dfs(int depth, int last) {
+        if (depth == 3) {
+            for (Integer integer : output) {
+                System.out.print(integer+" ");
+            }
+            System.out.println();
+        }
+
+        for (int i = 0; i < list.length; i++) {
+            if (!output.contains(list[i]) &&
+                    list[i] >= last) {
+                output.add(list[i]);
+                dfs(depth + 1, list[i]);
+                output.remove(output.size() - 1);
+            }
+        }
+    }
+
 }
 
