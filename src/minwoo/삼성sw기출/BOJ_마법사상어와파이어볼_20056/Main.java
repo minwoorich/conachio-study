@@ -1,10 +1,9 @@
-package minwoo.삼성sw기출.BOJ_마법사상어와파이어폴_20056;
+package minwoo.삼성sw기출.BOJ_마법사상어와파이어볼_20056;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.util.stream.Collectors;
 
 class FireBall{
     int r;
