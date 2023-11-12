@@ -1,4 +1,4 @@
-package minwoo.프로그래머스.카카오.블라인드코테2023;
+package minwoo.카카오.블라인드코테2023;
 
 import java.util.*;
 
