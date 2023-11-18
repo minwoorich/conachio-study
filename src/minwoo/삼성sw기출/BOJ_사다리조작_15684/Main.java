@@ -1,5 +1,4 @@
 package minwoo.삼성sw기출.BOJ_사다리조작_15684;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -30,7 +29,6 @@ public class Main {
     static int[][] map;
     static int N,M,H;
     static int a,b;
-    static int[][] trace;
     static int result = -1;
     static int[] dr = {0, 0, 1};
     static int[] dc = {-1, 1, 0};
@@ -38,7 +36,6 @@ public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static List<Integer> output = new ArrayList<>();
     static boolean[] visited;
-    static boolean[][] visitedMap;
     static String[] input;
     public static void main(String[] args) throws IOException {
         input = br.readLine().split(" ");
@@ -47,8 +44,6 @@ public class Main {
         M = Integer.parseInt(input[1]);
         H = Integer.parseInt(input[2]);
         map = new int[H][N];
-        trace = new int[H+1][N+1];
-        visitedMap = new boolean[H][N];
         for (int i = 0; i < M; i++) {
             input = br.readLine().split(" ");
             a = Integer.parseInt(input[0]) - 1;
@@ -60,30 +55,11 @@ public class Main {
         System.out.println(start());
     }
 
-//    public static int start() {
-//        addLines();
-//        printLines();
-//        visited = new boolean[lines.size()];
-//        if (chooseN(1)) {
-//            return 1;
-//        }
-//        if (chooseN(2)) {
-//            return 2;
-//        }
-//        if (chooseN(3)) {
-//            return 3;
-//        }
-//        return -1;
-//    }
-
     public static int start() {
         addLines();
-        printLines();
         visited = new boolean[lines.size()];
         for (int i = 0; i <= 3; i++) {
-            System.out.println("chooseN("+i+") 실행");
             chooseN(0, i);
-            reset();
             // result = -1 로 초기화 되어있음
             if (result == i) {
                 return result;
@@ -94,7 +70,7 @@ public class Main {
 
     public static void addLines() {
         for (int i = 0; i < H; i++) {
-            // N-1 까지만 해야함
+            // N-1 까지해야함
             for (int j = 0; j < N-1; j++) {
                 if (map[i][j] == 0) {
                     add(i,j);
@@ -119,31 +95,35 @@ public class Main {
         Point right = arr[1];
         return map[left.r][left.c] == 0 && map[right.r][right.c] == 0;
     }
-    public static void chooseN(int start, int n) {
+    public static boolean chooseN(int start, int n) {
         if (output.size() == n) {
             for (int i : output) {
                 if (!setLine(lines.get(i))) {
-//                    reset();
-                    return;
+                    reset();
+                    return false;
                 }
             }
 
             if (areAllReturningToStartColumn()) {
-//                reset();
-//                printMap();
+                reset();
                 result = n;
+                return true;
             }
-            return;
+            reset();
+            return false;
         }
         for (int i=start;i<lines.size();i++) {
             if (!visited[i]) {
                 visited[i] = true;
                 output.add(i);
-                chooseN(i+1,n);
+                if (chooseN(i + 1, n)) {
+                    return true;
+                }
                 output.remove(output.size()-1);
                 visited[i] = false;
             }
         }
+        return false;
     }
 
 
@@ -160,6 +140,8 @@ public class Main {
         return true;
     }
 
+
+
     public static boolean areAllReturningToStartColumn() {
         for (int i = 0; i < N; i++) {
             if (!startFromNthCol(new Point(0, i))) {
@@ -172,7 +154,6 @@ public class Main {
     public static boolean startFromNthCol(Point start) {
         Queue<Point> queue = new ArrayDeque<>();
         queue.add(start);
-        trace[start.r][start.c] = 1;
         Point end = null;
         int count = 0;
         while (true) {
@@ -194,7 +175,6 @@ public class Main {
                 nr = crnt.r + 1;
                 nc = crnt.c;
 
-                trace[nr][nc] = 1;
                 queue.add(new Point(nr, nc));
                 continue;
             }
@@ -204,7 +184,6 @@ public class Main {
             if (count == 2) { // 가로선을 다 건넜다면 다시 아래로 이동
                 nr = crnt.r + 1;
                 nc = crnt.c;
-                trace[nr][nc] = 1;
                 queue.add(new Point(nr, nc));
                 count = 0;
                 continue;
@@ -214,42 +193,12 @@ public class Main {
             // 현재값이 0 보다 작으면 -> '우' 로이동
             nr = crnt.r;
             nc = (val > 0) ? crnt.c - 1 : crnt.c + 1;
-            trace[nr][nc] = 1;
             queue.add(new Point(nr, nc));
         }
-
         return end.c == start.c;
     }
 
-    private static void printLines() {
-        for (Point[] arr : lines) {
-            for (Point p : arr) {
-                System.out.print(p+" ");
-            }
-            System.out.println();
-        }
-    }
 
-    public static void printMap() {
-        for (int i = 0; i < H; i++) {
-            for (int j = 0; j < N; j++) {
-                System.out.printf("%3d",map[i][j]);
-                System.out.print(" ("+i+", "+j+")");
-            }
-            System.out.println();
-        }
-        System.out.println(".........................");
-    }
-
-    public static void printTrace() {
-        for (int i = 0; i < H; i++) {
-            for (int j = 0; j < N; j++) {
-                System.out.printf("%3d",trace[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println(".........................");
-    }
     public static void reset() {
         for (int i = 0; i < H; i++) {
             for (int j = 0; j < N; j++) {
@@ -258,7 +207,7 @@ public class Main {
                 }
             }
         }
-        visitedMap = new boolean[H][N];
-        trace = new int[H+1][N+1];
+        visited = new boolean[lines.size()];
     }
 }
+
