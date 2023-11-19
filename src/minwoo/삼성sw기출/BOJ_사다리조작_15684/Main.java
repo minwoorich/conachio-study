@@ -30,8 +30,6 @@ public class Main {
     static int N,M,H;
     static int a,b;
     static int result = -1;
-    static int[] dr = {0, 0, 1};
-    static int[] dc = {-1, 1, 0};
     static List<Point[]> lines = new ArrayList<>();
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static List<Integer> output = new ArrayList<>();
