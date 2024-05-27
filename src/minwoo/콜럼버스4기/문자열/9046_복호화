@@ -1,0 +1,44 @@
+> 문제 확인 하러 가기 : https://www.acmicpc.net/problem/9046
+
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main{
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) throws IOException{
+        int N = Integer.parseInt(br.readLine());
+
+        while(N>0){
+            int[] check = new int[27];
+            char[] input = br.readLine().toCharArray();
+            int maxCount = 0;
+
+            for (char c : input) {
+                if (c == ' ') {
+                    continue;
+                }
+                check[c - 97]++;
+                maxCount = (maxCount > check[c - 97]) ? maxCount : check[c - 97];
+            }
+            int checkLen = check.length;
+            char answer = ' ';
+            int observer = 0;
+            for(int i=0; i<checkLen; i++){
+                if(check[i] == maxCount){
+                    answer = (char)(i+97);
+                    observer++;
+                }
+                if(observer>1){
+                    answer = '?';
+                    break;
+                }
+            }
+            N--;
+            System.out.println(answer);
+        }
+    }
+}
+
+
+```
